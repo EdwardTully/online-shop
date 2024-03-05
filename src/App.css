@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Home {
+  padding: 5%;
+  border: 1px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+  margin: auto;
+  width: 90%;
+  background: black;
+  background-size: auto;
+  color: white;
+  border: 1px solid red;
+}
+
+.assetForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  margin-left: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dataFetch {
+  display: flex;
+  width: 100%;
+  margin-left: 0px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.listItem {
+  padding-top: 3px;
+}
+
+.dataList {
+  list-style-type: none;
+}
+
+.listCnt {
+  height: 250px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.errorss {
+  color: red;
+}
+
+#mainH {
+  font-size: 90px;
+  margin-bottom: 1%;
+}
+
+#mainHt {
+  margin-bottom: 5%;
+}
+
+button {
+  height: 35px;
+  background: lightgray;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 3px;
+}
+
+.sidePanel {
+  width: 10%;
+  margin-right: 5%;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#findStuffButton {
+  margin: 5%;
+  font-size: 22px;
+}
+
+.windowCont {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  border: 1px solid rgb(205, 121, 121);
+  margin-left: 0px;
+}
+
+.searchForm {
+  border: 1px solid white;
+
+  width: 200px;
+  height: 30px;
+  margin: auto;
+}
+
+#itemCategories {
+  height: 30px;
+  width: 100%;
+  font-size: 22px;
+  border-radius: 5px;
+  background-color: rgb(227, 223, 223);
+}
+
+.shopWindow {
+  width: 90%;
+  margin-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid red;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.itemCard {
+  width: 22%;
+  height: 400px;
+  background: white;
+  color: black;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: ;
+}
+
+.cardWindow {
+  width: 90%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#itemPics {
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+#description {
+  font-weight: bold;
+  font-size: 20px;
+  margin: auto;
+  margin-bottom: 0px;
+  color: black;
+  background: white;
+  border-radius: 2px;
+}
+
+#price {
+  font-weight: bold;
+  font-size: 25px;
+  color: rgb(226, 14, 14);
+  background: white;
+  margin: auto;
+  margin-top: 0px;
+}
+
+.cardTitle {
+  margin: auto;
+}
+.navbarCont {
+  width: 100%;
+  color: white;
+
+  border: 1px solid white;
+}
+#navbar {
+  width: 100%;
+  text-decoration: none;
+}
+.navbar li {
+  font-size: 30px;
+}
+NavLink{
+  text-decoration: none;
 }
