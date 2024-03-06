@@ -5,7 +5,7 @@ function NavBar() {
 
    
   return (
-    <nav className={'navbarCont'}>
+    <nav className='navbarCont'>
       
        <ul className='navbar'>
           <NavLink to='/'>Home</NavLink>

@@ -2,13 +2,14 @@
 import '../App.css';
 import NavBar from './NavBar';
 import ShopWindow from './ShopWindow';
+import TitleBar from './TitleBar';
 
 
 function Home() {
   return (
     <div className="Home">
-      <h1 id='mainH'>Thrifty Dick's Dealbay</h1>
-      <h3 id = 'mainHt'>Crazy Good Deals and a FREE SECRET PRIZE, Guaranteed!</h3>
+      <TitleBar/>
+      <h3 id = 'mainHt'>We hunt for the  bargains so you don't have to...Come find your own thrill-of-the-hunt here!</h3>
       <NavBar/>
      <ShopWindow/>
     </div>

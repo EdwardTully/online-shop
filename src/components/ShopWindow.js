@@ -13,8 +13,7 @@ function ShopWindow() {
       const response = await axios.get("http://localhost:4000/featured?category=specials");
       const data = response.data;
       setList(data);
-      console.log(list);
-      console.log(val);
+      
     } catch (error) {
       console.log(error);
     }
@@ -26,13 +25,21 @@ function ShopWindow() {
       const response = await axios.get(baseUrl + `?category=${val}`);
       const data = response.data;
       setList(data);
-      console.log(list);
-      console.log(val);
+     
     } catch (error) {
       console.log(error);
     }
   }
-
+  async function getAllData() {
+    try {
+      const response = await axios.get(baseUrl);
+      const data = response.data;
+      setList(data);
+     
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="windowCont">
       <div className="sidePanel">
@@ -43,7 +50,7 @@ function ShopWindow() {
             onChange={(e) => setVal(e.target.value)}
           >
             <option type="text" value="welcome">
-              Select Your Stuff
+              Find Your Deals
             </option>
             <option type="text" value="specials">
               Clearance
@@ -101,6 +108,9 @@ function ShopWindow() {
         </form>
         <button id="findStuffButton" type="submit" onClick={() => getData()}>
           Find the Deals!
+        </button>
+        <button id="findStuffButton" type="submit" onClick={() => getAllData()}>
+          Browse the Deals!
         </button>
       </div>
 

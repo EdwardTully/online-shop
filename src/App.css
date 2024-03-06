@@ -1,10 +1,11 @@
 .Home {
-  padding: 5%;
+ 
  
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  align-content: center;
+ border: 2px solid rgb(81, 50, 3);
   margin: auto;
   width: 90%;
   background: black;
@@ -50,29 +51,59 @@ form {
 .errorss {
   color: red;
 }
+.titleBarCont{
+  width: 100%;
+ display: block;
 
+}
+.titleBar{
+  --u:  8vmin;	
+--c1: #ffa726;
+  --c2: #e59319;
+  --c3: #f1a12c;
+  --c4: #cf8b26;
+  --sh: #0006;
+  --sh2: #0002;
+  --gp: 50%/ calc(var(--u) * 2) calc(var(--u) * 2);
+height: 220px;
+border-bottom: 5px solid rgb(238, 200, 161);
+padding-left: 50px;
+background:    
+  conic-gradient(from -10deg at 60% 0%, #fff0 0 25%, var(--sh2) 28%, #fff0 31% 100%) var(--gp), 
+  conic-gradient(from -5deg at 0% calc(60% - 1px), #fff0 0, var(--sh) 0%, #fff0 4% 100%) var(--gp),    
+  conic-gradient(from 0deg at 60% calc(60% - 1px), #fff0 0 22%, var(--sh2) 25%, #fff0 25% 100%) var(--gp),     
+  conic-gradient(from 0deg at 60% calc(60% - 1px), var(--c4) 0 25%, #fff0 0 97.5%, var(--sh) 102%) var(--gp),   
+  linear-gradient(180deg, #fff0 0%, var(--sh) 10%, #fff0 10% 50%, var(--sh) 50%, #fff0 60% 101%) var(--gp),   
+  linear-gradient(180deg, #fff0 10%, var(--c3) 10% 50%, #fff0 50% 100%) var(--gp),   
+  linear-gradient(90deg, #fff0 0%, var(--sh) 10%, #fff0 10% 50%, var(--sh) 50%, #fff0 60% 100%) var(--gp),   
+  linear-gradient(90deg, #fff0 10%, var(--c2) 10% 50%, #fff0 50% 100%) var(--gp),   
+  linear-gradient(180deg, #fff0 60%, var(--c1) 60% 100%) var(--gp),   
+  #6a1c00;
+}
 #mainH {
   font-family: 'Merriweather';
-  font-size: 90px;
-  margin-bottom: 1%;
-  margin-top: 1px;
-  color: hsl(120, 33%, 46%);
+  font-size: 120px;
+  text-shadow: 8px 5px hsla(30, 1%, 32%, 0.7);
+  margin-top: 0px;
+  color: hsl(35, 52%, 91%);
 }
 
 #mainHt {
   margin-bottom: 5%;
   font-family: 'Merriweather';
-  font-size: 40px;
-  color: rgb(188, 20, 197);
+  font-size: 28px;
+  color: rgb(227, 204, 164);
   margin-bottom: 10px;
 }
 .navbarCont {
-  width: 100%;
+  width: 69%;
  margin-bottom: 1%;
+ margin-left: 5%;
+ border-bottom: 2px solid rgb(66, 50, 6);
  height: 60px;
  display: flex;
  align-content: center;
- justify-content: center;
+ justify-content: left;
 
 }
 
@@ -81,19 +112,22 @@ form {
   text-decoration: none;
   font-family: "Merriweather";
   font-size: 30px;
-  color: hsl(51, 50%, 50%);
+  color: hsl(50, 94%, 51%);
 }
 
 
 #findStuffButton {
-  height: 250px;
+  height: 120px;
   width: 250px;
   border-radius: 50%;
+  margin:10px;
+  margin-left: -8px;
   border: 2px inset white;
   font-size: 22px;
   font-family: 'Merriweather';
-  color: rgb(255, 255, 255);
+  color: rgb(244, 174, 117);
   background: rgb(232, 5, 5);
+  
 
 }
 #findStuffButton:hover{
@@ -120,7 +154,7 @@ form {
   font-size: 20px;
   
   border-radius: 5px;
-  color: rgb(212, 205, 205);
+  color: rgb(244, 174, 117);
   background-color: black;
 }
 
@@ -128,7 +162,7 @@ form {
 .sidePanel {
   width: 10%;
   margin-right: 5%;
-  height: 200px;
+  height: 600px;
 
   display: flex;
   flex-direction: column;
@@ -175,21 +209,22 @@ input[type='data']{
 
 .shopWindow {
   width: 90%;
-
+ 
   margin-left: 0px;
   display: flex;
   flex-wrap: wrap;
- border: 1px solid orange;
+ border-left: 2px solid orange;
   
   flex-direction: row;
-  padding: 7%;
+  padding: 2%;
   justify-content: left;
 }
 
 .itemCard {
-  width: 22%;
-  height: 400px;
-  background: rgb(219, 219, 219);
+  width: 16%;
+  height: 300px;
+  background: rgb(241, 205, 139);
+  border-radius: 15px;
   color: black;
   border: 4px solid black;
   display: flex;
@@ -201,7 +236,7 @@ input[type='data']{
 
 .cardWindow {
   width: 90%;
-  height: 50%;
+  height: 45%;
 
   display: flex;
   flex-direction: column;
@@ -210,7 +245,7 @@ input[type='data']{
 
 #itemPics {
   max-width: 90%;
-  max-height: 90%;
+  max-height: 85%;
   margin-top: 0px;
   border-radius: 5px;
   box-shadow: 1px 2px gray;
@@ -224,20 +259,18 @@ input[type='data']{
 
 .description {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Merriweather';
   text-justify: center;
   margin-left: 6%;
-  
- 
   color: black;
-  background: rgb(219, 219, 219);
+  background: hsla(0, 0%, 86%, .6);
   border-radius: 2px;
 }
 
 .price {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Merriweather';
   color: rgb(226, 14, 14);
   background: rgb(219, 219, 219);
@@ -249,4 +282,17 @@ input[type='data']{
   margin: auto;
 }
 
-
+.purchasePageCont{
+  border: 1px solid white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  color: white;
+  font-size: 30px;
+}
+.purchaseWindow{
+  border: 1px solid red;
+  width: 80%;
+  height: 500px;
+}
