@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
+import {useState} from 'react'
 import axios from "axios";
 import NavBar from "./NavBar";
 
@@ -15,7 +16,8 @@ function ProductEntry() {
       image: "",
     },
   });
-
+ 
+  const [catVal, setCatVal]= useState()
   const { register, control, handleSubmit, formState, reset } = form;
 
   const { errors } = formState;
@@ -27,9 +29,15 @@ function ProductEntry() {
       .catch((error) => {
         console.log(error);
       });
-
+    
     reset();
   };
+ const fireValState=(newVal)=>{
+  console.log(catVal)
+  console.log(newVal)
+    setCatVal(newVal)
+    console.log(catVal)
+ }
 
   return (
     <div className="assetForm">
@@ -61,16 +69,65 @@ function ProductEntry() {
         <p className="errorss">{errors.title?.message}</p>
 
         <label htmlFor="category">Category</label>
-        <input
-          type="text"
-          id="category"
-          {...register("category", {
-            required: {
-              value: true,
-              message: "category is required",
-            },
-          })}
-        />
+
+
+        <select id="category" value={catVal} onChange={(e)=>setCatVal(e.target.value)}{...register("category")}>
+
+
+            <option > </option>
+            <option type="text" value="specials">
+              Clearance
+            </option>
+            <option type="text" value="gardening">
+              Gardening
+            </option>
+
+            <option type="text" value="books">
+              Books
+            </option>
+
+            <option type="text" value="pet">
+              Pets and Accessories
+            </option>
+
+            <option type="text" value="electronics">
+              Electronics
+            </option>
+            <option type="text" value="communications">
+              Communication
+            </option>
+
+            <option type="text" value="kitchen">
+              Kitchen
+            </option>
+            <option type="text" value="furniture">
+              Furniture
+            </option>
+            <option type="text" value="office">
+              Office
+            </option>
+            <option type="text" value="accessories">
+              Beauty
+            </option>
+            <option type="text" value="games">
+              Games
+            </option>
+            <option type="text" value="gun">
+              Guns and Shooting
+            </option>
+            <option type="text" value="camping">
+              Camping
+            </option>
+            <option type="text" value="fitness">
+              Health and Fitness
+            </option>
+            <option type="text" value="kite">
+              Kites
+            </option>
+            <option type="text" value="art">
+              Artwork
+            </option>
+          </select>
         <p className="errorss">{errors.category?.message}</p>
 
         <label htmlFor="price">Price</label>

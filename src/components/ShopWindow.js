@@ -3,44 +3,23 @@ import ItemCard from "./ItemCard";
 import axios from "axios";
 
 function ShopWindow() {
-  const [term, setTerm] = useState("");
+  
   const [val, setVal] = useState("");
   const [list, setList] = useState([]);
   const baseUrl = "http://localhost:4000/products";
 
-  const getInitialData = async () => {
-    await axios
-      .get(`http://localhost:3001/products`)
-      .then((res) => {
-        setList(res.data);
-
-        console.log(res.data);
-        console.log(val);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  // useEffect( () => getInitialData()
-  // ,[])
-
-  /*const getData=async()=>{
-    
-       await axios
-      .get(`http://localhost:3001/products?category=${val}`)
-      .then((res) => {
-       
-       const dataItems = res.data
-
-        return dataItems
-      })
-      .then(setList(dataItems))
-      .catch((err) => {
-        console.log(err);
-      })
-     
- 
-    }*/
+  async function initialLoadData() {
+    try {
+      const response = await axios.get("http://localhost:4000/featured?category=specials");
+      const data = response.data;
+      setList(data);
+      console.log(list);
+      console.log(val);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect( () => initialLoadData,[])
 
   async function getData() {
     try {
@@ -65,6 +44,9 @@ function ShopWindow() {
           >
             <option type="text" value="welcome">
               Select Your Stuff
+            </option>
+            <option type="text" value="specials">
+              Clearance
             </option>
             <option type="text" value="gardening">
               Gardening

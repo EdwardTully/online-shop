@@ -11,8 +11,8 @@ function ItemCard(props) {
            <Link id='itemPic' to={'/purchase'}> <img id='itemPics' src={props.image} alt='noImage' /></Link>
         </div>
         <br/>
-        <span id="description">{props.description}!!!</span>
-        <span id="price"> Your's for only ${props.price}</span>
+        <p className="description">{props.description}!!!</p>
+        <p className="price"> Your's for only ${props.price}</p>
         
         
 
