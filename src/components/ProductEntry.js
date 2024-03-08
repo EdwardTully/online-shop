@@ -3,6 +3,7 @@ import { DevTool } from "@hookform/devtools";
 import {useState} from 'react'
 import axios from "axios";
 import NavBar from "./NavBar";
+import TitleBarDim from "./TilteBarDim";
 
 function ProductEntry() {
   //see FORMS-HOOKS project for notes on useForm use!
@@ -40,8 +41,9 @@ function ProductEntry() {
  }
 
   return (
+    <div className="Home">
     <div className="assetForm">
-      
+      <TitleBarDim/>
       <NavBar/>
       <h3>Inventory Asset Entry</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -162,6 +164,7 @@ function ProductEntry() {
         <button>Enter Item</button>
       </form>
       <DevTool control={control} />
+    </div>
     </div>
   );
 }

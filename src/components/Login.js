@@ -2,14 +2,13 @@ import React from 'react'
 import NavBar from './NavBar'
 import TitleBarDim from './TilteBarDim'
 
-function CheckOut() {
+function Login() {
   return (
-    <div  className="Home">
+    <div className='Home'>
       <TitleBarDim/>
-        <NavBar/>
-        Checkout
-    </div>
+      <NavBar/>
+      </div>
   )
 }
 
-export default CheckOut
+export default Login

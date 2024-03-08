@@ -12,6 +12,7 @@
 
 .assetForm {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   color: white;
@@ -49,6 +50,7 @@ form {
 }
 .titleBarCont {
   width: 100%;
+
   display: block;
 }
 .titleBar {
@@ -60,7 +62,71 @@ form {
   --sh: #0006;
   --sh2: #0002;
   --gp: 50% / calc(var(--u) * 2) calc(var(--u) * 2);
-  height: 300px;
+  height: 230px;
+  border-bottom: 5px solid rgb(238, 200, 161);
+  padding-left: 50px;
+  background: conic-gradient(
+        from -10deg at 60% 0%,
+        #fff0 0 25%,
+        var(--sh2) 28%,
+        #fff0 31% 100%
+      )
+      var(--gp),
+    conic-gradient(
+        from -5deg at 0% calc(60% - 1px),
+        #fff0 0,
+        var(--sh) 0%,
+        #fff0 4% 100%
+      )
+      var(--gp),
+    conic-gradient(
+        from 0deg at 60% calc(60% - 1px),
+        #fff0 0 22%,
+        var(--sh2) 25%,
+        #fff0 25% 100%
+      )
+      var(--gp),
+    conic-gradient(
+        from 0deg at 60% calc(60% - 1px),
+        var(--c4) 0 25%,
+        #fff0 0 97.5%,
+        var(--sh) 102%
+      )
+      var(--gp),
+    linear-gradient(
+        180deg,
+        #fff0 0%,
+        var(--sh) 10%,
+        #fff0 10% 50%,
+        var(--sh) 50%,
+        #fff0 60% 101%
+      )
+      var(--gp),
+    linear-gradient(180deg, #fff0 10%, var(--c3) 10% 50%, #fff0 50% 100%)
+      var(--gp),
+    linear-gradient(
+        90deg,
+        #fff0 0%,
+        var(--sh) 10%,
+        #fff0 10% 50%,
+        var(--sh) 50%,
+        #fff0 60% 100%
+      )
+      var(--gp),
+    linear-gradient(90deg, #fff0 10%, var(--c2) 10% 50%, #fff0 50% 100%)
+      var(--gp),
+    linear-gradient(180deg, #fff0 60%, var(--c1) 60% 100%) var(--gp), #6a1c00;
+}
+.titleBarDim{
+  --u: 8vmin;
+  --c1: #ffa726;
+  --c2: #e59319;
+  --c3: #f1a12c;
+  --c4: #cf8b26;
+  --sh: #0006;
+  --sh2: #0002;
+  --gp: 50% / calc(var(--u) * 2) calc(var(--u) * 2);
+  height: 200px;
   border-bottom: 5px solid rgb(238, 200, 161);
   padding-left: 50px;
   background: conic-gradient(
@@ -125,13 +191,13 @@ form {
 }
 
 #mainHt {
-  margin-bottom: 5%;
-  padding-top: 1%;
+  
   font-family: "Merriweather";
   font-size: 28px;
-  color: rgb(10, 10, 9);
-  margin-bottom: 10px;
-  margin-left: 15%;
+  color: rgb(231, 229, 225);
+  text-shadow: 3px 1px hsla(30, 1%, 32%, 0.7);
+  margin-bottom: 20px;
+  margin-left: 12%;
 }
 .welcomeMsg{
   margin-bottom: 3%;
@@ -140,7 +206,7 @@ form {
   font-size: 26px;
   color: rgb(229, 167, 50);
  
-  margin-left: 15%;
+  margin-left: 10%;
 }
 
 .navbarCont {
@@ -164,6 +230,7 @@ form {
 
 .userEntry {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   color: white;

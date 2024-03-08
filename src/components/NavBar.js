@@ -15,6 +15,7 @@ function NavBar() {
           <NavLink to='/checkout'>Account</NavLink>
           
           <NavLink to='/product_entry'>Product Entry</NavLink>
+          <NavLink to='/login'>Log In</NavLink>
           <NavLink to='/user_entry'>Register</NavLink>
           
       </ul>

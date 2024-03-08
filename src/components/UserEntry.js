@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import axios from "axios";
 import NavBar from "./NavBar";
+import TitleBarDim from "./TilteBarDim";
 
 function UserEntry() {
   const form = useForm({
@@ -30,7 +31,9 @@ function UserEntry() {
   };
 
   return (
+    <div  className="Home">
     <div className="userEntry">
+        <TitleBarDim/>
       <NavBar />
       <h3>Register</h3>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -119,6 +122,7 @@ function UserEntry() {
         <button>Enter Info</button>
       </form>
       <DevTool control={control} />
+    </div>
     </div>
   );
 }
