@@ -1,17 +1,13 @@
 .Home {
- 
- 
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
- border: 2px solid rgb(81, 50, 3);
+  border: 2px solid rgb(81, 50, 3);
   margin: auto;
   width: 90%;
   background: black;
   background-size: auto;
-  
- 
 }
 
 .assetForm {
@@ -51,113 +47,164 @@ form {
 .errorss {
   color: red;
 }
-.titleBarCont{
+.titleBarCont {
   width: 100%;
- display: block;
-
+  display: block;
 }
-.titleBar{
-  --u:  8vmin;	
---c1: #ffa726;
+.titleBar {
+  --u: 8vmin;
+  --c1: #ffa726;
   --c2: #e59319;
   --c3: #f1a12c;
   --c4: #cf8b26;
   --sh: #0006;
   --sh2: #0002;
-  --gp: 50%/ calc(var(--u) * 2) calc(var(--u) * 2);
-height: 220px;
-border-bottom: 5px solid rgb(238, 200, 161);
-padding-left: 50px;
-background:    
-  conic-gradient(from -10deg at 60% 0%, #fff0 0 25%, var(--sh2) 28%, #fff0 31% 100%) var(--gp), 
-  conic-gradient(from -5deg at 0% calc(60% - 1px), #fff0 0, var(--sh) 0%, #fff0 4% 100%) var(--gp),    
-  conic-gradient(from 0deg at 60% calc(60% - 1px), #fff0 0 22%, var(--sh2) 25%, #fff0 25% 100%) var(--gp),     
-  conic-gradient(from 0deg at 60% calc(60% - 1px), var(--c4) 0 25%, #fff0 0 97.5%, var(--sh) 102%) var(--gp),   
-  linear-gradient(180deg, #fff0 0%, var(--sh) 10%, #fff0 10% 50%, var(--sh) 50%, #fff0 60% 101%) var(--gp),   
-  linear-gradient(180deg, #fff0 10%, var(--c3) 10% 50%, #fff0 50% 100%) var(--gp),   
-  linear-gradient(90deg, #fff0 0%, var(--sh) 10%, #fff0 10% 50%, var(--sh) 50%, #fff0 60% 100%) var(--gp),   
-  linear-gradient(90deg, #fff0 10%, var(--c2) 10% 50%, #fff0 50% 100%) var(--gp),   
-  linear-gradient(180deg, #fff0 60%, var(--c1) 60% 100%) var(--gp),   
-  #6a1c00;
+  --gp: 50% / calc(var(--u) * 2) calc(var(--u) * 2);
+  height: 300px;
+  border-bottom: 5px solid rgb(238, 200, 161);
+  padding-left: 50px;
+  background: conic-gradient(
+        from -10deg at 60% 0%,
+        #fff0 0 25%,
+        var(--sh2) 28%,
+        #fff0 31% 100%
+      )
+      var(--gp),
+    conic-gradient(
+        from -5deg at 0% calc(60% - 1px),
+        #fff0 0,
+        var(--sh) 0%,
+        #fff0 4% 100%
+      )
+      var(--gp),
+    conic-gradient(
+        from 0deg at 60% calc(60% - 1px),
+        #fff0 0 22%,
+        var(--sh2) 25%,
+        #fff0 25% 100%
+      )
+      var(--gp),
+    conic-gradient(
+        from 0deg at 60% calc(60% - 1px),
+        var(--c4) 0 25%,
+        #fff0 0 97.5%,
+        var(--sh) 102%
+      )
+      var(--gp),
+    linear-gradient(
+        180deg,
+        #fff0 0%,
+        var(--sh) 10%,
+        #fff0 10% 50%,
+        var(--sh) 50%,
+        #fff0 60% 101%
+      )
+      var(--gp),
+    linear-gradient(180deg, #fff0 10%, var(--c3) 10% 50%, #fff0 50% 100%)
+      var(--gp),
+    linear-gradient(
+        90deg,
+        #fff0 0%,
+        var(--sh) 10%,
+        #fff0 10% 50%,
+        var(--sh) 50%,
+        #fff0 60% 100%
+      )
+      var(--gp),
+    linear-gradient(90deg, #fff0 10%, var(--c2) 10% 50%, #fff0 50% 100%)
+      var(--gp),
+    linear-gradient(180deg, #fff0 60%, var(--c1) 60% 100%) var(--gp), #6a1c00;
 }
 #mainH {
-  font-family: 'Merriweather';
+  font-family: "Merriweather";
   font-size: 120px;
   text-shadow: 8px 5px hsla(30, 1%, 32%, 0.7);
   margin-top: 0px;
+  margin-left: 5%;
   color: hsl(35, 52%, 91%);
 }
 
 #mainHt {
   margin-bottom: 5%;
-  font-family: 'Merriweather';
+  padding-top: 1%;
+  font-family: "Merriweather";
   font-size: 28px;
-  color: rgb(227, 204, 164);
+  color: rgb(10, 10, 9);
   margin-bottom: 10px;
+  margin-left: 15%;
 }
-.navbarCont {
-  width: 69%;
- margin-bottom: 1%;
- margin-left: 5%;
- border-bottom: 2px solid rgb(66, 50, 6);
- height: 60px;
- display: flex;
- align-content: center;
- justify-content: left;
+.welcomeMsg{
+  margin-bottom: 3%;
+  padding-top: 1%;
+  font-family: "Merriweather";
+  font-size: 26px;
+  color: rgb(229, 167, 50);
+ 
+  margin-left: 15%;
+}
 
+.navbarCont {
+  width: 75%;
+  margin-bottom: 1%;
+  margin-left: 5%;
+  border-bottom: 2px solid rgb(66, 50, 6);
+  height: 60px;
+  display: flex;
+  align-content: center;
+  justify-content: left;
 }
 
 .navbar a {
   margin: 0 15px;
   text-decoration: none;
   font-family: "Merriweather";
-  font-size: 30px;
+  font-size: 22px;
   color: hsl(50, 94%, 51%);
 }
 
+.userEntry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
 
 #findStuffButton {
   height: 120px;
   width: 250px;
   border-radius: 50%;
-  margin:10px;
+  margin: 10px;
   margin-left: -8px;
   border: 2px inset white;
   font-size: 22px;
-  font-family: 'Merriweather';
+  font-family: "Merriweather";
   color: rgb(244, 174, 117);
   background: rgb(232, 5, 5);
-  
-
 }
-#findStuffButton:hover{
-  
+#findStuffButton:hover {
   border: 2px outset white;
 }
-#findStuffButton:active{
+#findStuffButton:active {
   background: rgb(77, 1, 1);
   border: 2px outset rgb(70, 68, 68);
   color: rgb(85, 83, 83);
 }
-
 
 .searchForm {
   border: 2px inset rgb(186, 159, 7);
   margin: 30px 10px 20px 20px;
   width: 200px;
   height: 30px;
-  
 }
 #itemCategories {
   height: 30px;
   width: 100%;
   font-size: 20px;
-  
+
   border-radius: 5px;
   color: rgb(244, 174, 117);
   background-color: black;
 }
-
 
 .sidePanel {
   width: 10%;
@@ -168,20 +215,18 @@ background:
   flex-direction: column;
 }
 
-
-
 .windowCont {
   display: flex;
   width: 100%;
   flex-direction: row;
- 
+
   margin-left: 0px;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='number'],
-input[type='data']{
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="data"] {
   display: block;
   width: 400px;
   padding: 6px 12px;
@@ -193,7 +238,7 @@ input[type='data']{
   border-radius: 4px;
   margin-bottom: 20px;
 }
-#category{
+#category {
   display: block;
   width: 400px;
   padding: 6px 12px;
@@ -206,15 +251,20 @@ input[type='data']{
   margin-bottom: 20px;
 }
 
-
+.showDeal {
+  color: red;
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+  font-size: 25px;
+}
 .shopWindow {
-  width: 90%;
- 
+  width: 80%;
+
   margin-left: 0px;
   display: flex;
   flex-wrap: wrap;
- border-left: 2px solid orange;
-  
+  border-left: 2px solid orange;
+
   flex-direction: row;
   padding: 2%;
   justify-content: left;
@@ -223,7 +273,7 @@ input[type='data']{
 .itemCard {
   width: 16%;
   height: 300px;
-  background: rgb(241, 205, 139);
+  background: hsl(39, 78%, 75%);
   border-radius: 15px;
   color: black;
   border: 4px solid black;
@@ -231,7 +281,6 @@ input[type='data']{
   flex-direction: column;
   align-content: center;
   align-items: center;
-
 }
 
 .cardWindow {
@@ -250,30 +299,29 @@ input[type='data']{
   border-radius: 5px;
   box-shadow: 1px 2px gray;
 }
-#itemPics:hover{
+#itemPics:hover {
   box-shadow: 2px 4px gray;
   max-width: 91%;
   max-height: 91%;
- 
 }
 
 .description {
   font-weight: bold;
   font-size: 14px;
-  font-family: 'Merriweather';
+  font-family: "Merriweather";
   text-justify: center;
   margin-left: 6%;
   color: black;
-  background: hsla(0, 0%, 86%, .6);
+  background: hsla(39, 78%, 75%, 0.6);
   border-radius: 2px;
 }
 
 .price {
   font-weight: bold;
   font-size: 16px;
-  font-family: 'Merriweather';
+  font-family: "Merriweather";
   color: rgb(226, 14, 14);
-  background: rgb(219, 219, 219);
+  background: hsla(39, 78%, 75%, 0.6);
   margin: auto;
   margin-top: 0px;
 }
@@ -282,7 +330,7 @@ input[type='data']{
   margin: auto;
 }
 
-.purchasePageCont{
+.purchasePageCont {
   border: 1px solid white;
   width: 100%;
   display: flex;
@@ -291,7 +339,7 @@ input[type='data']{
   color: white;
   font-size: 30px;
 }
-.purchaseWindow{
+.purchaseWindow {
   border: 1px solid red;
   width: 80%;
   height: 500px;

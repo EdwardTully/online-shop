@@ -9,8 +9,13 @@ function NavBar() {
       
        <ul className='navbar'>
           <NavLink to='/'>Home</NavLink>
-          <NavLink to='/checkout'>Check Out</NavLink>
+          <NavLink to='/start_shop'>Start Shopping</NavLink>
+          <NavLink to='/checkout'>Shopping Cart</NavLink>
+          <NavLink to='/checkout'>Contact Us</NavLink>
+          <NavLink to='/checkout'>Account</NavLink>
+          
           <NavLink to='/product_entry'>Product Entry</NavLink>
+          <NavLink to='/user_entry'>Register</NavLink>
           
       </ul>
     </nav>

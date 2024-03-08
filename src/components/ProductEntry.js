@@ -41,8 +41,9 @@ function ProductEntry() {
 
   return (
     <div className="assetForm">
-      <h3>Inventory Asset Entry</h3>
+      
       <NavBar/>
+      <h3>Inventory Asset Entry</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="id">ID</label>
         <input

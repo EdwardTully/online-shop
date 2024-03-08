@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useToggle } from "react";
 import ItemCard from "./ItemCard";
 import axios from "axios";
 
 function ShopWindow() {
   
   const [val, setVal] = useState("");
-  const [list, setList] = useState([]);
+  const [list, setList] = useState([{}]);
   const baseUrl = "http://localhost:4000/products";
+ const deal=`Daily Bargain`
+  const [toggle, setToggle]= useState(true)
 
   async function initialLoadData() {
     try {
@@ -17,8 +19,17 @@ function ShopWindow() {
     } catch (error) {
       console.log(error);
     }
+    setToggle(true)
   }
-  useEffect( () => initialLoadData,[])
+
+ useEffect(()=> setToggle(true),[])
+
+useEffect(() => {
+    
+    if(toggle===true){
+       initialLoadData()
+       console.log(toggle)}},
+    [])
 
   async function getData() {
     try {
@@ -29,6 +40,8 @@ function ShopWindow() {
     } catch (error) {
       console.log(error);
     }
+    setToggle(false)
+   
   }
   async function getAllData() {
     try {
@@ -39,9 +52,12 @@ function ShopWindow() {
     } catch (error) {
       console.log(error);
     }
+    setToggle(false)
   }
+
   return (
     <div className="windowCont">
+      
       <div className="sidePanel">
         <form className="searchForm">
           <select
@@ -115,6 +131,9 @@ function ShopWindow() {
       </div>
 
       <div className="shopWindow">
+     
+     <>{toggle ? <p className="showDeal">{deal}</p>: ''} </>
+
         {list.map((e) => (
           <ItemCard
             key={e.id}

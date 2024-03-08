@@ -23,7 +23,7 @@ function ItemCard(props) {
         <h3 className={'cardTitle'}>{props.title}</h3>
         
         <div className='cardWindow'>
-           <Link id='itemPic' to={'/purchase'} state={purchInfo}> <img id='itemPics' src={props.image} alt='noImage'/></Link>
+           <Link id='itemPic' to={'/start_shop/purchase'} state={purchInfo}> <img id='itemPics' src={props.image} alt='noImage'/></Link>
         </div>
         <br/>
         <p className="description">{props.description}!!!</p>
