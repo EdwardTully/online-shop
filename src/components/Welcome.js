@@ -32,7 +32,7 @@ function Welcome() {
   return (
     <div>
         
-        <h4 className='welcomeMsg'>Welcome to Buy It Now. Log in Now or Create an Account to Explore all the Great Bargains we Offer.</h4>
+        <h4 className='welcomeMsg'>Welcome Buyers! New Customers, Create an Account to Explore all the Great Bargains we Offer.</h4>
 
         <div className="shopWindow">
         <p className="showDeal">{deal}</p>
