@@ -1,16 +1,21 @@
 
 
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ItemCard from "./ItemCard";
-import axios from "axios";
+   
+import { fetchItems } from "./shopWindowSlice";
 
 function Welcome() {
 
- 
-  const [list, setList] = useState([{}]);
-  const deal=`Daily Bargain`
 
-  async function initialLoadData() {
+  const dispatch = useDispatch()
+ 
+
+  
+  const deal=`Big Deals`
+
+  /*async function initialLoadData() {
     try {
       const response = await axios.get("http://localhost:4000/featured?category=specials");
       const data = response.data;
@@ -20,14 +25,11 @@ function Welcome() {
       console.log(error);
     }
   
-  }
+  }*/
 
-  useEffect(
-    () => initialLoadData,
+dispatch(fetchItems('featured'))
 
-    []
-  );
-
+const deals = useSelector((state)=>state.items)
 
   return (
     <div>
@@ -36,7 +38,7 @@ function Welcome() {
 
         <div className="shopWindow">
         <p className="showDeal">{deal}</p>
-        {list.map((e) => (
+        {deals.items.map((e) => (
           <ItemCard
             key={e.id}
             title={e.title}
