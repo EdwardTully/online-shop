@@ -1,63 +1,67 @@
-import React, { useState, useEffect, useToggle } from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ItemCard from "./ItemCard";
-import axios from "axios";
+import { fetchItems } from "./shopWindowSlice";
 
 function ShopWindow() {
-  
   const [val, setVal] = useState("");
-  const [list, setList] = useState([{}]);
-  const baseUrl = "http://localhost:4000/products";
- const deal=`Daily Bargain`
-  const [toggle, setToggle]= useState(true)
+  
+  const dispatch = useDispatch();
 
-  async function initialLoadData() {
+
+
+//TRANSITIONED FROM LOCAL STATE TO USE OF STORE so that searches are not reset by navigating website.
+
+
+  /*async function initialLoadData() {
     try {
-      const response = await axios.get("http://localhost:4000/featured?category=specials");
+      const response = await axios.get(
+        "http://localhost:4000/featured?category=specials"
+      );
       const data = response.data;
       setList(data);
-      
     } catch (error) {
       console.log(error);
     }
-    setToggle(true)
-  }
+    setToggle(false);
+  }*/
 
- useEffect(()=> setToggle(true),[])
 
-useEffect(() => {
-    
-    if(toggle===true){
-       initialLoadData()
-       console.log(toggle)}},
-    [])
 
-  async function getData() {
+
+
+  //items from store slice
+
+  const items = useSelector((state) => state.items);
+
+
+
+
+ /* async function getData() {
     try {
       const response = await axios.get(baseUrl + `?category=${val}`);
       const data = response.data;
       setList(data);
-     
     } catch (error) {
       console.log(error);
     }
-    setToggle(false)
-   
-  }
-  async function getAllData() {
+    setToggle(false);
+  }*/
+
+//use dispatch
+ /* async function getAllData() {
     try {
       const response = await axios.get(baseUrl);
       const data = response.data;
       setList(data);
-     
     } catch (error) {
       console.log(error);
     }
-    setToggle(false)
-  }
+    setToggle(false);
+  }*/
 
   return (
     <div className="windowCont">
-      
       <div className="sidePanel">
         <form className="searchForm">
           <select
@@ -122,27 +126,48 @@ useEffect(() => {
             </option>
           </select>
         </form>
-        <button id="findStuffButton" type="submit" onClick={() => getData()}>
+        <button
+          id="findStuffButton"
+          type="submit"
+          onClick={() => dispatch(fetchItems( `products?category=${val}`))}
+        >
           Find the Deals!
         </button>
-        <button id="findStuffButton" type="submit" onClick={() => getAllData()}>
+
+        <button
+         id="findStuffButton" 
+         type="submit" 
+         onClick={() => dispatch(fetchItems('products'))}>
           Browse the Deals!
         </button>
+
+        <button
+          id="findStuffButton"
+          type="submit"
+          onClick={() => dispatch(fetchItems( `featured`))}
+        >
+          Clearance!
+        </button>
+
       </div>
 
       <div className="shopWindow">
-     
-     <>{toggle ? <p className="showDeal">{deal}</p>: ''} </>
+        
+      
+            {items.items.map((e) => (
+              <ItemCard
+                key={e.id}
+                title={e.title}
+                description={e.description}
+                price={e.price}
+                image={e.image}
+              />
+            ))
+          }
+       
+      
 
-        {list.map((e) => (
-          <ItemCard
-            key={e.id}
-            title={e.title}
-            description={e.description}
-            price={e.price}
-            image={e.image}
-          />
-        ))}
+      
       </div>
     </div>
   );

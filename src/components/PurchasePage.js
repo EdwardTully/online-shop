@@ -1,7 +1,6 @@
-import React,{useEffect, useState} from 'react'
+import React from 'react'
 import NavBar from './NavBar'
 import {useLocation} from 'react-router-dom'
-import axios from 'axios'
 import TitleBarDim from './TilteBarDim'
 
 function PuchasePage() {
@@ -18,7 +17,7 @@ const {image, title, description}=grabCardInfo.state
       <TitleBarDim/>
       <NavBar/>
       <div className='purchaseWindow'>
-        <img src={image} alt='no image' Width='500'/>
+        <img src={image} alt='none' Width='500'/>
         <span >{description}</span>
       </div>
       
