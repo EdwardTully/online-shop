@@ -32,7 +32,7 @@ function ShopWindow() {
 
   //items from store slice
 
-  const items = useSelector((state) => state.items);
+  const items = useSelector((state) => state.virtualWarehouse);
 
 
 

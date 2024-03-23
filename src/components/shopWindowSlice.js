@@ -9,14 +9,16 @@ const initialState= {
 
 const baseUrl = "http://localhost:4000/";
 
-export const fetchItems=createAsyncThunk('items/fetchItems', (val)=>{
+export const fetchItems=createAsyncThunk('virtualWarehouse/fetchItems', (val)=>{
     return axios
     .get(baseUrl+val)
     .then((response)=>response.data)
-})
+    .then(console.log(val))
+}
+    )
 
 const itemsSlice = createSlice({
-    name: 'items',
+    name: 'virtualWarehouse',
     initialState: initialState,
     extraReducers: (builder)=>{
         builder.addCase(fetchItems.pending, (state)=>{

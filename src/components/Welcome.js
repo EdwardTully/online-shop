@@ -1,6 +1,6 @@
 
 
-import React from "react";
+import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ItemCard from "./ItemCard";
    
@@ -27,9 +27,14 @@ function Welcome() {
   
   }*/
 
-dispatch(fetchItems('featured'))
+//without useEffect, the dispatch/subscribe will cause an infinite loop because the component would be in a constant state of reloading.  We may need to visit this with specific dependencies later.
 
-const deals = useSelector((state)=>state.items)
+useEffect(()=>{
+  dispatch(fetchItems('featured'))
+},[])
+
+const deals = useSelector((state)=>state.virtualWarehouse)
+
 
   return (
     <div>

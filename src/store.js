@@ -3,7 +3,7 @@ import itemsReducer from './components/shopWindowSlice'
 
 const store = configureStore({
     reducer: {
-        items: itemsReducer
+        virtualWarehouse: itemsReducer
     }
 })
 

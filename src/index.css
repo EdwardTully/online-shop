@@ -12,6 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}

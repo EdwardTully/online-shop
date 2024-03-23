@@ -6,14 +6,18 @@ function ItemCard(props) {
   const [purchInfo, setPurchInfo]=useState({
     image: '',
     title: '',
-    description:''
+    description:'',
+    price: '',
+    id: ''
   })
 
   useEffect(()=>{
     setPurchInfo({
       image: props.image,
       title: props.title,
-      description: props.description
+      description: props.description,
+      price: props.price,
+      id: props.key
     })
   },[props.image, props.title, props.description])
 
