@@ -1,16 +1,41 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import NavBar from './NavBar'
 import {useLocation} from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {useDispatch} from "react-redux"
+import  {addToCart}  from './cartSlice'
 
 function PuchasePage() {
 
+const dispatch = useDispatch()
+
 const grabCardInfo = useLocation()
 
+//unpack state on selected card for display and shop cart, etc:
+
 const {image, title, description,price,
-  id}=grabCardInfo.state
+  }=grabCardInfo.state
+
+//package payload variables to be sent to shop cart
+
+const [cartPayload, setCartPayload] = useState({
+    title: '',
+    price: '',
+    
+})
 
 
+
+
+//make action payload for shopping cart, on load
+
+useEffect(()=>{
+  setCartPayload({
+    title: title,
+    price: price,
+    
+  })
+}, [])
 
 
   return (
@@ -31,8 +56,9 @@ const {image, title, description,price,
                   
                     <div className="div-13">
                       <button type="button"className="div-14">Buy Now</button>
-                      <button className="div-15">Cart</button>
-                    <NavLink to='/start_shop'><button className="div-15">Go Back</button></NavLink>  
+                      <Link to='/start_shop'><button className="div-15" onClick={()=>dispatch(addToCart(cartPayload))}
+                      >Cart</button></Link> 
+                    <Link to='/start_shop'><button className="div-15">Go Back</button></Link>  
                      
                     </div>
                   </div>

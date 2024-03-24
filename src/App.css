@@ -600,3 +600,109 @@ input[type="data"] {
     margin-top: 40px;
   }
 }
+.frame-child {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 300px;
+  height: 73px;
+  position: relative;
+  background-color: #060606;
+ 
+  
+}
+.shopping-cart {
+  height: 49px;
+  width: 226px;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.shopping-cart-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px 0 21px;
+}
+.frame-item {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  border: 1px solid white;
+  background-color: #090909;
+
+}
+.frame-parent,
+.frame-wrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.frame-parent {
+  width: 667px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 23px;
+}
+.frame-wrapper {
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 10px 0 20px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 30px;
+  color: #f1c296;
+  font-family: "Roboto Serif";
+}
+.desktop-1,
+.rectangle-parent {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+ 
+}
+.rectangle-parent {
+  height: max-content;
+  flex: 1;
+  background-color: #020202;
+  flex-direction: column;
+  padding: 0 0 248px 46px;
+  box-sizing: border-box;
+  gap: 103px;
+  max-width: 100%;
+}
+.desktop-1 {
+  width: 100%;
+  height: max-content;
+  position: relative;
+  background-color: #fff;
+  flex-direction: row;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 825px) {
+  .shopping-cart {
+    font-size: 26px;
+  }
+  .rectangle-parent {
+    gap: 51px 103px;
+    padding-left: 23px;
+    padding-bottom: 161px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .shopping-cart {
+    font-size: 19px;
+  }
+  .rectangle-parent {
+    gap: 26px 103px;
+    padding-bottom: 105px;
+    box-sizing: border-box;
+  }
+}

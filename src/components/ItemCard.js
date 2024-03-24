@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 
 function ItemCard(props) {
 
+  //this object below will be passed as a state in the Link element.  Then each card has its specific object attached to it.  Using this with
+  //useLocation to grab the state down the road.
+
   const [purchInfo, setPurchInfo]=useState({
     image: '',
     title: '',
@@ -10,6 +13,7 @@ function ItemCard(props) {
     price: '',
     id: ''
   })
+
 
   useEffect(()=>{
     setPurchInfo({
@@ -24,7 +28,7 @@ function ItemCard(props) {
   return (
     <div className="itemCard"  >
     
-        <h3 className={'cardTitle'}>{props.title}</h3>
+        <div className='cardTitle' style={{justifyText: 'center', fontWeight:'bold'}}>{props.title}</div>
         
         <div className='cardWindow'>
            <Link id='itemPic' to={'/start_shop/purchase'} state={purchInfo}> <img id='itemPics' src={props.image} alt='noImage'/></Link>
