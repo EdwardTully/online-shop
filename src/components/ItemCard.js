@@ -10,7 +10,7 @@ function ItemCard(props) {
     image: '',
     title: '',
     description:'',
-    price: '',
+    price: 0,
     id: ''
   })
 

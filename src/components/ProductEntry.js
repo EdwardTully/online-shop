@@ -12,7 +12,7 @@ function ProductEntry() {
       id: "",
       title: "",
       category: "",
-      price: '',
+      price: 0,
       description: "",
       image: "",
     },

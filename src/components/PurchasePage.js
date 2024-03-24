@@ -20,7 +20,7 @@ const {image, title, description,price,
 
 const [cartPayload, setCartPayload] = useState({
     title: '',
-    price: '',
+    price: 0,
     
 })
 
