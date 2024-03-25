@@ -1,18 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import NavBar from './NavBar'
 import {useSelector, useDispatch} from 'react-redux'
 import DataTable from 'react-data-table-component'
-import { removeFromCart } from './cartSlice'
+import { removeFromCart} from './cartSlice'
 
 function CheckOut() {
   
   const dispatch=useDispatch()
 
+  const [selectedRows, setSelectedRows]=useState(false)
+
   const columns=[
   
     {
       name: 'Title',
-      selector: (row)=> row.title,
+      selector: (row)=>row.title,
       width: '70%',
       
     },
@@ -29,29 +31,46 @@ function CheckOut() {
     rows: {
       style: {
         fontSize: "18px",
+        fontStyle: 'Roboto',
         color: "gray",
-        backgroundColor: "black",
+        backgroundColor: "",
         height: "30px;",
       },
     },
     headCells: {
       style: {
         fontSize: "22px",
-        color: "white",
-        backgroundColor: "orange",
+        fontStyle: 'Roboto',
+        color: "black",
+        backgroundColor: "white",
       },
     },
   };
 
-  //collect shopping cart slice state
+  //collect shopping cart slice state,  also attempt to remove empty initial slice state from data so that the empty row doesnt show up. 
 
   const cartContents=useSelector((state)=>state.cart.item)
 
+//removes empty initial state '' from data so that table doesnt make an empty row:
+
+  const cartContNoEmpty = cartContents.filter((e)=> e.title !=='')
+
+  
+
+ 
+
   //this below doesnt work yet, need to look at docs to understand how to get the state of the selected row.  need to see what way we can modify the check out slice from the table so that we can submit an order.
 
-  const handleChange=(state)=>{
-    console.log(state.selectedRows)
+  //selected row data added to constant:
+  const handleChange=({selectedRows})=>{
+    setSelectedRows(selectedRows)
+   
   }
+  //attempt to dispatch a remove action, not working yet error is in the slice reducer...
+  const handleRemove=()=>{
+    console.log(selectedRows)
+    dispatch(removeFromCart(selectedRows))
+ }
 
 
   return (
@@ -64,17 +83,21 @@ function CheckOut() {
         <section className="frame-wrapper">
           <div className="frame-parent">
             <div className="shopping-cart-wrapper">
-              <div className="shopping-cart">Thank you</div>
+              <div className="shopping-cart">Your Cart Items</div>
             </div>
             <div className="frame-item" ><DataTable
                   columns={columns}
-                  data={cartContents}
+                  data={cartContNoEmpty}
                   customStyles={darkTheme}
                   selectableRows
+                  selectableRowsNoSelectAll
+                  onSelectedRowsChange={handleChange}
+                  
+                  striped
                   
                   />
                   </div>
-                  <button onClick={handleChange}>Remove Selected</button>
+                  <button onClick={handleRemove}>Remove Selected</button>
           </div>
         </section>
       </main>

@@ -614,7 +614,9 @@ input[type="data"] {
 }
 .shopping-cart {
   height: 49px;
-  width: 226px;
+  width: 290px;
+  margin-left: 50px;
+ 
   position: relative;
   display: inline-block;
   flex-shrink: 0;

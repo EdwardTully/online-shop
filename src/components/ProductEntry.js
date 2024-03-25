@@ -12,7 +12,7 @@ function ProductEntry() {
       id: "",
       title: "",
       category: "",
-      price: 0,
+      price: parseInt(''),
       description: "",
       image: "",
     },
@@ -39,6 +39,8 @@ function ProductEntry() {
     setCatVal(newVal)
     console.log(catVal)
  }
+
+ 
 
   return (
     <div className="Home">
@@ -137,6 +139,7 @@ function ProductEntry() {
         <input
           type="number"
           id="price"
+       
           {...register("price", {
             required: {
               value: true,

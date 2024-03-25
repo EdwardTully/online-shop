@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import {useDispatch} from "react-redux"
 import  {addToCart}  from './cartSlice'
 
+
 function PuchasePage() {
 
 const dispatch = useDispatch()
@@ -35,8 +36,8 @@ useEffect(()=>{
     price: price,
     
   })
+  
 }, [])
-
 
   return (
    
@@ -55,10 +56,10 @@ useEffect(()=>{
                     <div className="div-10" >$ {price}</div>
                   
                     <div className="div-13">
-                      <button type="button"className="div-14">Buy Now</button>
-                      <Link to='/start_shop'><button className="div-15" onClick={()=>dispatch(addToCart(cartPayload))}
-                      >Cart</button></Link> 
-                    <Link to='/start_shop'><button className="div-15">Go Back</button></Link>  
+                      <button type="button"className="div-14"onClick={()=>dispatch(addToCart(cartPayload))}>Add to Cart</button>
+                      <button className="div-15"  
+                      >Remove from Cart</button>
+                    <Link to='/start_shop'><button className="div-15">Continue Shopping</button></Link>  
                      
                     </div>
                   </div>
